@@ -1,6 +1,6 @@
 # bbs notifier
 
-For [东南大学虎踞龙蟠BBS](bbs.seu.edu.cn)
+For [东南大学虎踞龙蟠BBS](http://bbs.seu.edu.cn)
 
 ## Setup
 I think both Linux and Mac OS X have these command line tools i.e. bash, curl, and cron, installed by default. I'm using Mac in this progress.
