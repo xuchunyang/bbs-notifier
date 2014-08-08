@@ -2,22 +2,23 @@
 
 For [东南大学虎踞龙蟠BBS](http://bbs.seu.edu.cn)
 
-## Setup
-I think both Linux and Mac OS X have these command line tools i.e. bash, curl, and cron, installed by default. I'm using Mac in this progress.
+## Required tools
 
-1. Acquire API token
-  * use *curl*
-2. Query notifinications
-  * use bash with *curl*
-3. Send email if necessary
-  * parse the notifinications(json, give *jq* a try)
-  * write a sh script using *mail*
-4. 定期执行 
-  * search *cron* for how to use it
+* curl (pre-installed)
+* mail (pre-installed)
+* jq (use `brew install jq` to install, for more information see [jq](https://github.com/stedolan/jq))
+
+
+## Usage
+1. Setup `mail` to send mail from the command line
+  - for example, [Using MacOSX Lion command line mail with Gmail as SMTP](http://www.anujgakhar.com/2011/12/09/using-macosx-lion-command-line-mail-with-gmail-as-smtp/)
+2. Change *USER_NAME* and *USER_PASSWORD* in `bbs-notifier.sh`to yours
+3. Setup 'cron' to evluate `bbs-notifier.sh` regularly
+  - e.g. run `crontab -e` and enter `*/15 * * * *  /usr/bin/local/bbs-notifier.sh`
 
 ## TODO
-- [ ] 写一个 script 执行 2 ，并根据结果，条件执行 3
+- [x] Write `bbs-notifier.sh`
+- [ ] Donot send twice
 
 ## Reference
-* [虎踞龙蟠BBS API](http://bbs.seu.edu.cn/api-documentation/)
-* http://www.anujgakhar.com/2011/12/09/using-macosx-lion-command-line-mail-with-gmail-as-smtp/
+* [虎踞龙蟠BBS API 文档](http://bbs.seu.edu.cn/api-documentation/)
